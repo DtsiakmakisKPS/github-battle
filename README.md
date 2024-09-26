@@ -26,7 +26,7 @@ GitHub Battle is a React application that allows users to compare the popularity
 
 ## Demo
 
-[Live Demo](https://your-live-demo-link.com)
+[Live Demo](https://github-battle-wrji-gamma.vercel.app/)
 
 ## Technologies
 
