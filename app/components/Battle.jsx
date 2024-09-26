@@ -55,6 +55,7 @@ class PlayerInput extends React.Component {
                <button
                   className='btn link'
                   type='submit'
+                  aria-label='Submit'
                   disabled={!this.state.username}>
                   Submit
                </button>
@@ -85,6 +86,7 @@ function PlayerPreview({ username, onReset, label }) {
             </div>
             <button
                onClick={onReset}
+               aria-label='Close'
                className='btn secondary icon'>
                {close}
             </button>

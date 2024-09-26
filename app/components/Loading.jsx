@@ -41,16 +41,17 @@ export default class Loading extends React.Component {
 
    componentDidMount = () => {
       const { speed, text } = this.props;
-
-      this.interval = window.setInterval(() => {
-         this.state.content === text + "..."
-            ? this.setState({ content: text })
-            : this.setState(({ content }) => ({ content: content + "." }));
-      }, speed);
+      const animate = () => {
+         this.setState(({ content }) => ({
+            content: content === text + "..." ? text : content + ".",
+         }));
+         this.animationFrame = requestAnimationFrame(animate);
+      };
+      this.animationFrame = requestAnimationFrame(animate);
    };
 
    componentWillUnmount = () => {
-      window.clearInterval(this.interval);
+      cancelAnimationFrame(this.animationFrame);
    };
 
    render() {

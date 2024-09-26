@@ -16,20 +16,35 @@ function Card({ profile }) {
       location,
       company,
    } = profile;
+
+   const avatarWebP = avatar_url.replace(".png", ".webp");
+
    return (
       <div className='card bg-light'>
          <header className='split'>
             <div>
                <h4>
-                  <a href={html_url}>{login}</a>
+                  <a
+                     href={html_url}
+                     target='_blank'
+                     rel='noopener noreferrer'>
+                     {login}
+                  </a>
                </h4>
                <p>{location || "unknown"}</p>
             </div>
-            <img
-               className='avatar large'
-               src={avatar_url}
-               alt={`Avatar for ${login}`}
-            />
+            <picture>
+               <source
+                  srcSet={avatarWebP}
+                  type='image/webp'
+               />
+               <img
+                  className='avatar large'
+                  src={avatar_url}
+                  alt={`Avatar for ${login}`}
+                  loading='lazy'
+               />
+            </picture>
          </header>
          <ul className='stack'>
             <li className='split'>

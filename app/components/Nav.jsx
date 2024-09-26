@@ -35,7 +35,8 @@ export default function Nav({ theme, toggleTheme }) {
             <li>
                <button
                   className='btn secondary icon'
-                  onClick={toggleTheme}>
+                  onClick={toggleTheme}
+                  aria-label='Toggle Theme'>
                   {theme === "light" ? sunIcon : moonIcon}
                </button>
             </li>
